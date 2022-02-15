@@ -1,0 +1,29 @@
+spring:
+    application:
+        name: JPA-Tutorial
+
+    datasource:
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        url: jdbc:sqlserver://localhost:1433;InstanceName=SQLEXPRESS;databaseName=SpringBoot
+        username: root
+        password: 1234
+    jpa:
+        hibernate:
+            ddl-auto: create
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        generate-ddl: true
+        show-sql: false
+        properties:
+            hibernate:
+                format_sql: true
+
+logging:
+  level:
+    org.springframework: ERROR
+    
+# HTTP Server
+server:
+  port: 9900
+#   servlet:
+#     context-path: 
