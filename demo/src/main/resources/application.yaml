@@ -4,9 +4,9 @@ spring:
 
     datasource:
         driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-        url: jdbc:sqlserver://localhost:1433;InstanceName=SQLEXPRESS;databaseName=SpringBoot
-        username: root
-        password: 1234
+        url: jdbc:sqlserver://localhost:1433;InstanceName=SQL2019;databaseName=SpringBoot
+        username: sa
+        password: s@1234
     jpa:
         hibernate:
             ddl-auto: create

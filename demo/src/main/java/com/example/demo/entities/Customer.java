@@ -28,6 +28,11 @@ public class Customer {
     public Customer(String studentName){
         this.studentName = studentName;
     }
+    
+    public Customer(int id) {
+        this.id = id;
+       
+    }
 
     public int getId(){
         return id;

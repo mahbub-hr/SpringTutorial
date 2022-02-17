@@ -7,7 +7,9 @@ import com.example.demo.entities.Customer;
 import com.example.demo.service.CustomerService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,19 +30,47 @@ public class CustomerController {
      * @param payload
      * @return
      */
+    // @PostMapping(value = "/saveSingleCustomer")
+    // String saveSingleCustomer (@RequestBody HashMap<String, Object>payload)
+    // {String studentName =(String) payload.get("studentName");
+    // customerService.saveStudent(studentName);
+    // return "Success";
+    // }
+
     @PostMapping(value = "/saveCustomer")
     String saveCustomer(@RequestBody List<HashMap<String, Object>> payload){
         // loop here
-        for () {
-            
+        for (HashMap<String, Object> hasMapObj : payload) {
+           String name = (String) hasMapObj.get("StudentName");
+            customerService.saveStudent(name);
         }
-        String studentName = (String) payload.get("studentName");
-        customerService.saveStudent(studentName);
         return "Success";
     }
 
     @GetMapping("getAllCustomer")
-    List<Customer> getAllCustomer(){
+
+    List<Customer> getAllCustomer()
+    {
         return customerService.getAllCustomer();
     }
-}
+
+    // @GetMapping ("getCustomerById/{id}")
+    // List<Customer> getCustomerById()
+    // {
+    //     return customerService.findById(1);
+    // }
+
+    @GetMapping ("getCustomerById/{id}")
+    public ResponseEntity<Customer> getCustomer(@PathVariable int id) {
+		Customer customer = customerService.findById(id);
+		if (customer != null) {
+			return ResponseEntity.ok(customer); // return 200, with json body
+		} else {
+			return ResponseEntity.notFound().build();
+		}
+
+	}
+
+        
+    }
+
