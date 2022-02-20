@@ -13,11 +13,11 @@ import org.springframework.stereotype.Service;
 public class CustomerService {
     @Autowired CustomerRepository customerRepository;
 
+    // Save Student
     public void saveStudent(String studentName){
         Customer customer = new Customer(studentName);
         customerRepository.save(customer);
     }
-
     public List<Customer> getAllCustomer(){
         List<Customer> customerList = customerRepository.findAll();
         // for(Customer customer: customerList){
