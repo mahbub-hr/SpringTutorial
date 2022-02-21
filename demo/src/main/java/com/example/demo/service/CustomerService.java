@@ -1,11 +1,7 @@
 package com.example.demo.service;
-
 import java.util.List;
-import java.util.Optional;
-
 import com.example.demo.entities.Customer;
 import com.example.demo.repositories.CustomerRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +9,9 @@ import org.springframework.stereotype.Service;
 public class CustomerService {
     @Autowired CustomerRepository customerRepository;
 
-    // Save Student
-    public void saveStudent(String studentName){
-        Customer customer = new Customer(studentName);
+    // Save Customer
+    public void saveCustomer(String customerName){
+        Customer customer = new Customer(customerName);
         customerRepository.save(customer);
     }
     public List<Customer> getAllCustomer(){

@@ -30,19 +30,19 @@ public class CustomerController {
      * @param payload
      * @return
      */
-    // @PostMapping(value = "/saveSingleCustomer")
-    // String saveSingleCustomer (@RequestBody HashMap<String, Object>payload)
-    // {String studentName =(String) payload.get("studentName");
-    // customerService.saveStudent(studentName);
-    // return "Success";
-    // }
+    @PostMapping(value = "/saveSingleCustomer")
+    String saveSingleCustomer (@RequestBody HashMap<String, Object>payload)
+    {   String customerName =(String) payload.get("customerName");
+        customerService.saveCustomer(customerName);
+        return "Success";
+    }
 
-    @PostMapping(value = "/saveCustomer")
-    String saveCustomer(@RequestBody List<HashMap<String, Object>> payload){
+    @PostMapping(value = "/saveMultipleCustomer")
+    String saveMultipleCustomer(@RequestBody List<HashMap<String, Object>> payload){
         // loop here
         for (HashMap<String, Object> hasMapObj : payload) {
-           String name = (String) hasMapObj.get("StudentName");
-            customerService.saveStudent(name);
+           String name = (String) hasMapObj.get("customerName");
+            customerService.saveCustomer(name);
         }
         return "Success";
     }

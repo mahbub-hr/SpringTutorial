@@ -10,23 +10,23 @@ import javax.persistence.Id;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "StudentId")
+    @Column(name = "customerId")
     private int id;
 
-    @Column(name = "StudentName")
-    private String studentName;
+    @Column(name = "customerName")
+    private String customerName;
 
     public Customer(){
 
     }
     
-    public Customer(int id, String studentName) {
+    public Customer(int id, String customerName) {
         this.id = id;
-        this.studentName = studentName;
+        this.customerName = customerName;
     }
 
-    public Customer(String studentName){
-        this.studentName = studentName;
+    public Customer(String customerName){
+        this.customerName = customerName;
     }
     
     public Customer(int id) {
@@ -42,11 +42,10 @@ public class Customer {
         this.id= id;
     }
 
-    public String getStudentName(){
-        return this.studentName;
+    public String getcustomerName(){
+        return this.customerName;
     }
-
-    public void setStudentName(String studentName){
-        this.studentName = studentName;
+    public void setcustomerName(String customerName){
+        this.customerName = customerName;
     }
 }

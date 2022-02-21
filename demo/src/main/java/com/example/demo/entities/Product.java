@@ -26,32 +26,15 @@ public  Product()
     //default constructor
 }
 //create parameterized constructor
-
-// public Product(int id,String ProductName,String ProductNumber,String ProductCatagory)
-// {
-//     this.id=id;
-//     this.productName=ProductName;
-//     this.productNumber=ProductNumber;
-//     this.productCatagory=ProductCatagory;
-// }
-
 public Product(String ProductName,String ProductNumber,String ProductCatagory)
 {
- 
     this.productName=ProductName;
     this.productNumber=ProductNumber;
     this.productCatagory=ProductCatagory;
 }
 
 // Getter Setter Method Add
-public int getId()
-{
-return id;
-}
-public void setId(int id)
-{
-    this.id= id;
-}
+
 public String getProductName()
 {
     return this.productName;
